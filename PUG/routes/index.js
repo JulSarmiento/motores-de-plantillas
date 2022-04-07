@@ -14,32 +14,32 @@ const productExist = require('../middlewares/productMiddleware');
 /**
  * This list all the products
  */
-router.get('/productos', containerFunctions.getAll);
+router.get('/', containerFunctions.getAll);
 
 /**
  * This return a random product
  */
-router.get('/producto-random', containerFunctions.getRandom);
+router.get('/random', containerFunctions.getRandom);
 
 /**
  * This return a product by id
  */
-router.get('/productos/:id', productExist ,containerFunctions.getById);
+router.get('/:id', productExist ,containerFunctions.getById);
 
 /**
  * This save a new product 
  */
-router.post('/productos', multerMiddleware.single('thumbnail') ,containerFunctions.save);
+router.post('/', multerMiddleware.single('thumbnail') ,containerFunctions.save);
 
 /**
  * This update an existent product 
  */
-router.put('/productos/:id',[productExist, multerMiddleware.single('thumbnail')], containerFunctions.update);
+router.put('/:id',[productExist, multerMiddleware.single('thumbnail')], containerFunctions.update);
 
 /**
  * This delete an existent product by its id 
  */
-router.delete('/productos/:id', productExist, containerFunctions.deleteById);
+router.delete('/:id', productExist, containerFunctions.deleteById);
 
 
 module.exports = router;

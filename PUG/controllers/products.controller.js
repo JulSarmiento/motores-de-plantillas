@@ -14,12 +14,16 @@ exports.save = async function(req, res) {
     thumbnail = `/uploads/${req.file.filename}`;
   }
 
-  res.json(await product.save({...req.body, thumbnail}));
+  await product.save({...req.body, thumbnail});
+
+  res.redirect('/productos');
 }
 
 // return all products
 exports.getAll = async function(req, res) {
-  res.json(await product.getAll());
+  const products = await product.getAll();
+
+  res.render('productos', { products });
 }
 
 // return one product by its id

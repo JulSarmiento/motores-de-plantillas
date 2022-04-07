@@ -1,19 +1,25 @@
 // AQUI VA LA APP DE EXPRESS
 const express = require('express');
-const app = express();
 
 // import the routes
 const routes = require('../routes');
+
+const app = express();
+
 
 // Parse data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// establecemos el motor de plantilla que se utiliza
+app.set("view engine", "pug");
+app.set('views', './views');
+
 // call the html
 app.use(express.static('public'));
 
 // product`s routes
-app.use('/', routes);
+app.use('/productos', routes);
 
 const PATH = process.env.PORT || 8080
 
