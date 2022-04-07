@@ -1,0 +1,20 @@
+[
+  {
+    "productName": "Collar Light Amatista",
+    "productPrice": "100000",
+    "thumbnail": "/uploads/1649347367425-collar-light-amathist-front.jpg",
+    "id": 1
+  },
+  {
+    "productName": "Collar Elegant",
+    "productPrice": "152000",
+    "thumbnail": "/uploads/1649347391494-collar-elegant-redAmbar-front.jpg",
+    "id": 2
+  },
+  {
+    "productName": "Id Tag Azul",
+    "productPrice": "50000",
+    "thumbnail": "/uploads/1649347414189-tag-blue-with-gold.jpg",
+    "id": 3
+  }
+]
